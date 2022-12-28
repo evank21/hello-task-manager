@@ -10,9 +10,9 @@ export const Column = ({ text }: ColumnProps) => {
   return (
     <ColumnContainer>
       <ColumnTitle>{text}</ColumnTitle>
-      <Card text="Generate App Scaffolding" />
-      <Card text="Learn Typescript" />
-      <Card text="Begin to use static typing" />
+      <Card text="Task #1" />
+      <Card text="Task #2" />
+      <Card text="Task #3" />
       <AddNewItem
         toggleButtonText="+ Add another card"
         onAdd={() => console.log("New Item Added")}
