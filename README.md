@@ -1,6 +1,6 @@
 # Hello
 
-Hello is a general kanban-style board for task management. Once done, might repurpose this as a interview process organizer or something else.
+Hello is a general purpose kanban-style board for task management built in Typescript using Context API, useReducer and Immer for state management.
 
 ### `npm start`
 
