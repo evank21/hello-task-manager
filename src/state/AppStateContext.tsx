@@ -40,6 +40,28 @@ type AppStateContextProps = {
   getTasksByListId(id: string): Task[];
 };
 
+type AppStateProviderProps = {
+  children: React.ReactNode;
+};
+
 const AppStateContext = createContext<AppStateContextProps>(
   {} as AppStateContextProps
 );
+
+export const AppStateProvider = ({ children }: AppStateProviderProps) => {
+  const { lists } = appData;
+
+  const getTasksByListId = (id: string) => {
+    return lists.find((list) => list.id === id)?.tasks || [];
+  };
+
+  return (
+    <AppStateContext.Provider value={{ lists, getTasksByListId }}>
+      {children}
+    </AppStateContext.Provider>
+  );
+};
+
+export const useAppState = () => {
+  return useContext(AppStateContext);
+};
